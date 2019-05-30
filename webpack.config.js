@@ -9,22 +9,21 @@ module.exports = () => {
       path: path.resolve(__dirname, 'build'),
     },
     plugins: [
-   new HtmlWebpackPlugin({
-     template: './src/index.template.html',
-   }),
+     new HtmlWebpackPlugin({
+       template: './src/index.template.html',
+     }),
   ],
     resolve: {
-      extensions: ['.js', '.css'],
+      extensions: ['*', '.js', '.css'],
     },
     module: {
-      rules: [
-        {
-          test: [/\.js$/],
-          exclude: /node_modules/,
-          loaders: ['babel-loader'],
-        },
-
-      ],
-    },
+        rules: [
+          {
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+          },
+        ],
+      },
   };
 };
