@@ -3,7 +3,7 @@ import BreadCrumbs from './BreadCrumbs';
 import HomePage from './HomePage';
 import ResultPage from './ResultPage';
 import DetailResult from './DetailResult';
-import Data from './result.json'
+import Data from './result.json';
 
 class Main extends React.Component {
   constructor() {
@@ -12,7 +12,7 @@ class Main extends React.Component {
       studentsData: Data.results,
       displayPage: 'Home',
       indStudent: {},
-    }
+    };
     this.doRenderPageContent = this.doRenderPageContent.bind(this);
     this.breadCrumbClick = this.breadCrumbClick.bind(this);
     this.displayResult = this.displayResult.bind(this);
@@ -21,34 +21,42 @@ class Main extends React.Component {
   breadCrumbClick(displayPage) {
     this.setState({
       displayPage,
-    })
+    });
   }
 
   displayResult(displayPage, indStudent) {
     this.setState({
       displayPage,
       indStudent,
-    })
+    });
   }
 
   doRenderPageContent() {
-    if(this.state.displayPage === 'Home')
-      return <HomePage />
-    else if (this.state.displayPage === 'StudentList')
-      return <ResultPage
-      studentsData={this.state.studentsData}
-      displayResult={this.displayResult}
-      />
-    else if (this.state.displayPage === 'DetailResult')
-      return <DetailResult indStudent={this.state.indStudent}/>
+    const { displayPage, studentsData, indStudent } = this.state;
+    if (displayPage === 'Home') {
+      return <HomePage />;
+    }
+    if (displayPage === 'StudentList') {
+      return (
+        <ResultPage
+          studentsData={studentsData}
+          displayResult={this.displayResult}
+        />
+      );
+    }
+    if (displayPage === 'DetailResult') {
+      return <DetailResult indStudent={indStudent} />;
+    }
+    return <HomePage />;
   }
 
   render() {
+    const { displayPage } = this.state;
     return (
       <div className="PageContent">
         <BreadCrumbs
-        breadCrumbClick={this.breadCrumbClick}
-        currentPage={this.state.displayPage}
+          breadCrumbClick={this.breadCrumbClick}
+          currentPage={displayPage}
         />
         {this.doRenderPageContent()}
       </div>

@@ -2,21 +2,25 @@ import React from 'react';
 
 export default class ResultPage extends React.Component {
   displayResult(displayPage, student) {
-    this.props.displayResult(displayPage, student);
+    const { displayResult } = this.props;
+    return displayResult(displayPage, student);
   }
 
   render() {
+    const { studentsData } = this.props;
     return (
       <div>
         Click on the person to get the detailed result.
         <ul><b>FirstName LastName Percentage </b></ul>
         {
-          this.props.studentsData.map((student, i) => {
-            let total = (student.marks.english + student.marks.hindi + student.marks.mathematics);
-            let percentage = parseInt(total / 3, 10);
+          studentsData.map((student) => {
+            const total = (student.marks.english + student.marks.hindi + student.marks.mathematics),
+              percentage = parseInt(total / 3, 10);
             return (
-              <ul key={i} onClick={this.displayResult.bind(this, 'DetailResult', student)}>
-                {student.firstName} {student.lastName} {percentage}%
+              <ul key={student.firstName + student.lastName} onClick={this.displayResult.bind(this, 'DetailResult', student)}>
+                {student.firstName}
+                {student.lastName}
+                {percentage}%
               </ul>
             );
           })

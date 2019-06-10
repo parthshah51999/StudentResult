@@ -5,7 +5,7 @@ module.exports = {
         "max-len": ["error", { "code": 220 }],
         "one-var": ["error", "always"],
         "no-unused-expressions": ["error", { "allowShortCircuit": true }],
-        "react/prop-types": 0
+        "react/prop-types": 0,
     },
     "parser": "babel-eslint",
     "globals": {
