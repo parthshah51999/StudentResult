@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js",
-    "build": "webpack --config ./webpack.config.js --progress --profile --colors"
+    "build": "webpack --config ./webpack.config.js --progress --profile --colors",
+    "lint": "./node_modules/.bin/eslint src",
+    "lint-fixup": "./node_modules/.bin/eslint src --ext .js,.jsx --fix"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +22,13 @@
     "react-dom": "^15.5.4",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.9.7"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0"
   }
 }
