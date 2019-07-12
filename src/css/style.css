@@ -1,0 +1,97 @@
+body {
+  background: #d9a7c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.crumbs {
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.crumbs li {
+  float: left;
+  list-style: none;
+  padding: 13px 10px;
+}
+
+.crumbs li:first-child {
+  margin-left: 20px;
+}
+
+.crumbs li:last-child {
+  margin-right: 0;
+}
+
+.crumbs p {
+  margin: 0;
+}
+
+.currentCrumb {
+  color: yellow;
+}
+
+.hoverClass li:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.centerAlign {
+  text-align: center;
+}
+
+/* TABLE CSS */
+.Table {
+  display: table;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+}
+
+.Row {
+  display: table-row;
+}
+
+.listClass {
+  display: table-row;
+}
+
+span:hover {
+  cursor: pointer;
+}
+
+.Cell {
+  display: table-cell;
+  border-width: thin;
+  border-top: 1px solid #eee;
+  background: #fff;
+  padding : 14px 10px;
+  min-width: 232px;
+  max-width: 150;
+  font-size: 20px;
+  color: #a9a9a9;
+}
+
+.failure-cell {
+  background-color: red;
+}
+
+.CellHeadings {
+  display: table-cell;
+  border-width: thin;
+  border-top: 1px solid #eee;
+  background: black;
+  padding : 14px 10px;
+  min-width: 232px;
+  max-width: 150;
+  font-size: 15px;
+  color: #a9a9a9;
+}
+
+h4 {
+  margin-top: 30px;
+}

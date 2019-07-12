@@ -13,15 +13,16 @@ export default class BreadCrumbs extends React.Component {
     const { currentPage } = this.props;
     fCrumbs = currentPage !== 'DetailResult' ? crumbs.slice(0, 2) : [...crumbs];
     return (
-      <ul>
+      <ul className="crumbs clearfix hoverClass">
         {
           fCrumbs.map((item) => {
             return (
               <li
                 key={item}
                 onClick={this.breadCrumbClick.bind(this, item)}
+                className={currentPage === item ? 'currentCrumb' : ''}
               >
-                {item}
+                <p>{item}</p>
               </li>
             );
           })

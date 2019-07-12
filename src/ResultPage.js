@@ -9,23 +9,52 @@ export default class ResultPage extends React.Component {
   render() {
     const { studentsData } = this.props;
     return (
-      <div>
-        Click on the person to get the detailed result.
-        <ul><b>FirstName LastName Percentage </b></ul>
-        {
-          studentsData.map((student) => {
-            const total = (student.marks.english + student.marks.hindi + student.marks.mathematics),
-              percentage = parseInt(total / 3, 10);
-            return (
-              <ul key={student.firstName + student.lastName} onClick={this.displayResult.bind(this, 'DetailResult', student)}>
-                {student.firstName}
-                {student.lastName}
-                {percentage}%
-              </ul>
-            );
-          })
-        }
+      <div className="centerAlign">
+        <h3>Click on the first name to get the detailed result.</h3>
+        <div className="Table">
+            <div className="CellHeadings">First Name</div>
+            <div className="CellHeadings">Last Name</div>
+            <div className="CellHeadings">Percentage</div>
+          {
+            studentsData.map((student) => {
+              const total = (student.marks.english + student.marks.hindi + student.marks.mathematics),
+                percentage = parseInt(total / 3, 10);
+              return (
+                <div key={student.firstName + student.lastName}
+                     className="Row"
+                     >
+                  <span className={percentage < 35 ? 'Cell failure-cell' : 'Cell'}
+                       onClick={this.displayResult.bind(this, 'DetailResult', student)}
+                       >{student.firstName}
+                  </span>
+                  <div className={percentage < 35 ? 'Cell failure-cell' : 'Cell'}>{student.lastName}</div>
+                  <div className={percentage < 35 ? 'Cell failure-cell' : 'Cell'}>{percentage+'%'}</div>
+                </div>
+              );
+            })
+          }
+        </div>
       </div>
     );
   }
 }
+
+
+/*
+
+<ul><b>FirstName LastName Percentage </b></ul>
+{
+  studentsData.map((student) => {
+    const total = (student.marks.english + student.marks.hindi + student.marks.mathematics),
+      percentage = parseInt(total / 3, 10);
+    return (
+      <li key={student.firstName + student.lastName} onClick={this.displayResult.bind(this, 'DetailResult', student)}>
+        {student.firstName}
+        {student.lastName}
+        {percentage}%
+      </li>
+    );
+  })
+}
+
+*/
