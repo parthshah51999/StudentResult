@@ -6,11 +6,11 @@ const DetailResult = (props) => {
     <div className="centerAlign">
       <h4>Please see {indStudent.firstName}'s detailed result below.</h4>
       <div className ="Table">
-        <div className="CellHeadings">First Name</div>
-        <div className="CellHeadings">Last Name</div>
-        <div className="CellHeadings">English</div>
-        <div className="CellHeadings">Hindi</div>
-        <div className="CellHeadings">Mathematics</div>
+        <div className="cellHeadings">First Name</div>
+        <div className="cellHeadings">Last Name</div>
+        <div className="cellHeadings">English</div>
+        <div className="cellHeadings">Hindi</div>
+        <div className="cellHeadings">Mathematics</div>
         <div className="Row">
           <div className="Cell">{indStudent.firstName}</div>
           <div className="Cell">{indStudent.lastName}</div>

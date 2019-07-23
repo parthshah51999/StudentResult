@@ -80,7 +80,7 @@ span:hover {
   background-color: red;
 }
 
-.CellHeadings {
+.cellHeadings {
   display: table-cell;
   border-width: thin;
   border-top: 1px solid #eee;

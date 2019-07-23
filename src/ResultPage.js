@@ -12,9 +12,9 @@ export default class ResultPage extends React.Component {
       <div className="centerAlign">
         <h3>Click on the first name to get the detailed result.</h3>
         <div className="Table">
-            <div className="CellHeadings">First Name</div>
-            <div className="CellHeadings">Last Name</div>
-            <div className="CellHeadings">Percentage</div>
+            <div className="cellHeadings">First Name</div>
+            <div className="cellHeadings">Last Name</div>
+            <div className="cellHeadings">Percentage</div>
           {
             studentsData.map((student) => {
               const total = (student.marks.english + student.marks.hindi + student.marks.mathematics),
@@ -38,23 +38,3 @@ export default class ResultPage extends React.Component {
     );
   }
 }
-
-
-/*
-
-<ul><b>FirstName LastName Percentage </b></ul>
-{
-  studentsData.map((student) => {
-    const total = (student.marks.english + student.marks.hindi + student.marks.mathematics),
-      percentage = parseInt(total / 3, 10);
-    return (
-      <li key={student.firstName + student.lastName} onClick={this.displayResult.bind(this, 'DetailResult', student)}>
-        {student.firstName}
-        {student.lastName}
-        {percentage}%
-      </li>
-    );
-  })
-}
-
-*/
