@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import ResultPage from './ResultPage';
 import DetailResult from './DetailResult';
 import Data from './result.json';
+import './css/style';
 
 class Main extends React.Component {
   constructor() {
